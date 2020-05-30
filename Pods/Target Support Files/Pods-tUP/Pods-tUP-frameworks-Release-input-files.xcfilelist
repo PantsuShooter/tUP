@@ -1,0 +1,6 @@
+${PODS_ROOT}/Target Support Files/Pods-tUP/Pods-tUP-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/Hero/Hero.framework
+${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework
+${BUILT_PRODUCTS_DIR}/Nuke-Alamofire-Plugin/NukeAlamofirePlugin.framework
+${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework

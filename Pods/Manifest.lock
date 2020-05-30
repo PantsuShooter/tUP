@@ -1,0 +1,38 @@
+PODS:
+  - Alamofire (4.9.1)
+  - Hero (1.5.0)
+  - Nuke (7.6.3)
+  - Nuke-Alamofire-Plugin (4.2):
+    - Alamofire (~> 4.0)
+    - Nuke (~> 7.0)
+  - R.swift (5.2.2):
+    - R.swift.Library (~> 5.2.0)
+  - R.swift.Library (5.2.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Hero
+  - Nuke
+  - Nuke-Alamofire-Plugin
+  - R.swift
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Hero
+    - Nuke
+    - Nuke-Alamofire-Plugin
+    - R.swift
+    - R.swift.Library
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Hero: b7385b75e7259da62f4f85462f59a5082d66b058
+  Nuke: 44130e95e09463f8773ae4b96b90de1eba6b3350
+  Nuke-Alamofire-Plugin: ee83df6e81e70488ca33033ac98b3f86a2ab1597
+  R.swift: 7c52cdc57a66840ffe6cbd8a823d732059d42a32
+  R.swift.Library: 5ba4f1631300caf9a4d890186930da85d540769d
+
+PODFILE CHECKSUM: 65e67dd309c0cc62231a3c6f6f02173cb9dbdbc6
+
+COCOAPODS: 1.8.4

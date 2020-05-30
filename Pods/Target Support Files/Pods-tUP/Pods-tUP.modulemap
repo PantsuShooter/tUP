@@ -1,0 +1,6 @@
+module Pods_tUP {
+  umbrella header "Pods-tUP-umbrella.h"
+
+  export *
+  module * { export * }
+}

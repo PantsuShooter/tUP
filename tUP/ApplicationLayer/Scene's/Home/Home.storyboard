@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -29,37 +30,41 @@
         <!--Home View Controller-->
         <scene sceneID="ZCk-Lb-n43">
             <objects>
-                <viewController id="Nie-A9-cLB" customClass="HomeViewController" customModule="tUP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Nie-A9-cLB" customClass="HomeViewController" customModule="App_name" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8Xk-J6-sPw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="66T-Rp-BAT">
-                                <rect key="frame" x="0.0" y="0.0" width="150" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="5" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="5" id="SF0-uG-Ljo"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="CustomLaunchScreenBGViewID"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="66T-Rp-BAT" firstAttribute="width" secondItem="8Xk-J6-sPw" secondAttribute="width" multiplier="0.362319" id="J7n-x2-2e4"/>
                             <constraint firstItem="66T-Rp-BAT" firstAttribute="top" secondItem="8Xk-J6-sPw" secondAttribute="top" id="LXh-WE-K3C"/>
                             <constraint firstItem="66T-Rp-BAT" firstAttribute="leading" secondItem="8Xk-J6-sPw" secondAttribute="leading" id="WL6-BF-KaV"/>
                             <constraint firstAttribute="bottom" secondItem="66T-Rp-BAT" secondAttribute="bottom" id="lBO-6y-osS"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="awZ-9f-odq"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="CustomLaunchScreenBGViewID"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" id="VYw-0h-imz"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="heroModalAnimationTypeString" value="CustomLaunchScreenBGViewID"/>
                     </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Uv-L1-9UZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

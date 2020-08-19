@@ -1,4 +1,4 @@
-module NukeAlamofirePlugin {
+framework module NukeAlamofirePlugin {
   umbrella header "Nuke-Alamofire-Plugin-umbrella.h"
 
   export *

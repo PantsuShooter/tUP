@@ -12,13 +12,13 @@
 
 import UIKit
 
-protocol AuthorizationStoryBusinessLogic
-{
-    func getRandomPhoto(request: AuthorizationStory.Photo.Request)
+protocol AuthorizationStoryBusinessLogic {
+//    func getRandomPhoto(request: AuthorizationStory.Photo.Request)
+    func loadContent(request: AuthorizationStory.Photo.Request)
 }
 
 protocol AuthorizationStoryDataStore {
-
+    var image: UIImage? { get set }
 }
 
 class AuthorizationStoryInteractor: AuthorizationStoryBusinessLogic, AuthorizationStoryDataStore {
@@ -26,23 +26,15 @@ class AuthorizationStoryInteractor: AuthorizationStoryBusinessLogic, Authorizati
     var presenter: AuthorizationStoryPresentationLogic?
     var worker = AuthorizationStoryWorker()
 
+    var image: UIImage?
     
-    func getRandomPhoto(request: AuthorizationStory.Photo.Request) {
-    
-        worker.getRandomPhoto(completionBlock: { [weak self] photo, error in
-            
-            let response = AuthorizationStory.Photo.Response(photo: photo, error: error)
-            self?.presenter?.presentRandomPhoto(response: response)
-            
-//            if let photo = photo {
-//                let response = AuthorizationStory.Photo.Response(photo: photo, error: nil)
-//                self?.presenter?.presentRandomPhoto(response: response)
-//            }
-//
-//            if let error = error {
-//                let response = AuthorizationStory.Photo.Response(photo: nil, error: error)
-//                self?.presenter?.presentRandomPhoto(response: response)
-//            }
-        })
+    func loadContent(request: AuthorizationStory.Photo.Request) {
+        
+        guard let image = image else { return }
+        
+        let response = AuthorizationStory.Photo.Response(photo: image)
+
+        presenter?.presentLoadedContent(response: response)
+        
     }
 }

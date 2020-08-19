@@ -11,10 +11,17 @@
 //
 
 import UIKit
+import Nuke
 
-class ImitationLaunchScreenWorker
-{
-  func doSomeWork()
-  {
-  }
+class ImitationLaunchScreenWorker {
+    
+    public func getRandomPhoto(completionBlock: @escaping ( _ photo: PhotoModel?,  _ error: Error?) -> ()) {
+        NetworkManager.shared.getRandomPhoto(completionBlock: completionBlock)
+    }
+    
+    public func getPhotoBy(url: URL, completionBlock: @escaping ( _ photo: UIImage?,  _ error: Error?) -> ()) {
+        ImagePipeline.shared.loadImage(with: url) { response, error in
+            completionBlock(response?.image, error)
+        }
+    }
 }

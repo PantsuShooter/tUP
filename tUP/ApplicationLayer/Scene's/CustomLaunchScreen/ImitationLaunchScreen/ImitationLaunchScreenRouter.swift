@@ -12,25 +12,32 @@
 
 import UIKit
 
-@objc protocol ImitationLaunchScreenRoutingLogic
-{
-    func navigateToAuthorizationStory()
+@objc protocol ImitationLaunchScreenRoutingLogic {
+    func routeToAuthorizationStory(segue: UIStoryboardSegue)
+    func navigateToHome()
 }
 
-protocol ImitationLaunchScreenDataPassing
-{
+protocol ImitationLaunchScreenDataPassing {
   var dataStore: ImitationLaunchScreenDataStore? { get }
 }
 
-class ImitationLaunchScreenRouter: NSObject, ImitationLaunchScreenRoutingLogic, ImitationLaunchScreenDataPassing
-{
-  weak var viewController: ImitationLaunchScreenViewController?
-  var dataStore: ImitationLaunchScreenDataStore?
+class ImitationLaunchScreenRouter: NSObject, ImitationLaunchScreenRoutingLogic, ImitationLaunchScreenDataPassing {
+
+    weak var viewController: ImitationLaunchScreenViewController?
+    var dataStore: ImitationLaunchScreenDataStore?
   
     // MARK: Routing
-    func navigateToAuthorizationStory() {
+    
+    func routeToAuthorizationStory(segue: UIStoryboardSegue) {
+    
+        let authorizationViewController = segue.destination as? AuthorizationStoryViewController
+        var authorizationDataStore = authorizationViewController?.router?.dataStore
+        authorizationDataStore?.image = dataStore?.image
+    }
+    
+    func navigateToHome() {
         
-        viewController?.performSegue(withIdentifier: R.segue.imitationLaunchScreenViewViewController.authorizationStory.identifier, sender: .none)
+        viewController?.performSegue(withIdentifier: R.segue.imitationLaunchScreenViewController.home.identifier, sender: .none)
         
     }
 }

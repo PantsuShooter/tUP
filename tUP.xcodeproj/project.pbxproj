@@ -3,11 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		22062D73890DFDCFED2D36B2 /* libPods-tUP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 531AF2FA4199501541C1FACF /* libPods-tUP.a */; };
+		730EAC06A888A78EDEE39716 /* Pods_tUP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F903D90257E526A6FCC34F7 /* Pods_tUP.framework */; };
+		F4478BCA249D56C0008271D1 /* SimpleModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4478BC9249D56C0008271D1 /* SimpleModels.swift */; };
+		F4478BCC249D571F008271D1 /* DataBaseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4478BCB249D571F008271D1 /* DataBaseModels.swift */; };
+		F4478BCF249D5806008271D1 /* LaunchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4478BCE249D5806008271D1 /* LaunchManager.swift */; };
+		F4478BD2249D6A6E008271D1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4478BD1249D6A6E008271D1 /* R.generated.swift */; };
+		F465A87B24C755760031A3FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F465A87A24C755760031A3FE /* GoogleService-Info.plist */; };
+		F465A87F24C75E330031A3FE /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F465A87E24C75E330031A3FE /* FirestoreManager.swift */; };
+		F465A88224C78E580031A3FE /* AuntificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F465A88124C78E580031A3FE /* AuntificationManager.swift */; };
+		F465A88524C793E50031A3FE /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F465A88424C793E50031A3FE /* UserManager.swift */; };
+		F465A88824C795BC0031A3FE /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F465A88724C795BC0031A3FE /* DataBaseManager.swift */; };
+		F48F28D024EDA46C00D518FC /* AlertsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F28CF24EDA46C00D518FC /* AlertsManager.swift */; };
+		F48F28D324EDA5AD00D518FC /* ConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F28D224EDA5AD00D518FC /* ConnectivityManager.swift */; };
 		F4C5EE2B2413FA62006EF511 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C5EE2A2413FA62006EF511 /* AppDelegate.swift */; };
 		F4C5EE342413FA64006EF511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4C5EE332413FA64006EF511 /* Assets.xcassets */; };
 		F4C5EE372413FA64006EF511 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4C5EE352413FA64006EF511 /* LaunchScreen.storyboard */; };
@@ -24,25 +35,34 @@
 		F4D7ECEB24140D9F0086D1BE /* AuthorizationStoryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D7ECE524140D9F0086D1BE /* AuthorizationStoryModels.swift */; };
 		F4D7ECEC24140D9F0086D1BE /* AuthorizationStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D7ECE624140D9F0086D1BE /* AuthorizationStoryViewController.swift */; };
 		F4D7ECED24140D9F0086D1BE /* AuthorizationStoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D7ECE724140D9F0086D1BE /* AuthorizationStoryInteractor.swift */; };
-		F4D7ECF2241413380086D1BE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D7ECF1241413380086D1BE /* R.generated.swift */; };
 		F4D7ED002414238E0086D1BE /* AuthorizationStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4D7ECFF2414238E0086D1BE /* AuthorizationStory.storyboard */; };
 		F4D7ED05241439B70086D1BE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D7ED04241439B70086D1BE /* NetworkManager.swift */; };
-		F4D7ED0824143D8F0086D1BE /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D7ED0724143D8F0086D1BE /* PhotoModel.swift */; };
-		F4D7ED0A24143F520086D1BE /* SourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D7ED0924143F520086D1BE /* SourceModel.swift */; };
 		F4DAE2BA24144334000763DA /* ImitationLaunchScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DAE2B924144334000763DA /* ImitationLaunchScreenInteractor.swift */; };
 		F4DAE2C024144347000763DA /* ImitationLaunchScreenWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DAE2BB24144347000763DA /* ImitationLaunchScreenWorker.swift */; };
 		F4DAE2C124144347000763DA /* ImitationLaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DAE2BC24144347000763DA /* ImitationLaunchScreenViewController.swift */; };
 		F4DAE2C224144347000763DA /* ImitationLaunchScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DAE2BD24144347000763DA /* ImitationLaunchScreenRouter.swift */; };
 		F4DAE2C324144347000763DA /* ImitationLaunchScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DAE2BE24144347000763DA /* ImitationLaunchScreenPresenter.swift */; };
 		F4DAE2C424144347000763DA /* ImitationLaunchScreenModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DAE2BF24144347000763DA /* ImitationLaunchScreenModels.swift */; };
-		F4DAE2C624144576000763DA /* PhotosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DAE2C524144576000763DA /* PhotosModel.swift */; };
 		F4DAE2C82414518B000763DA /* ImitationLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4DAE2C72414518A000763DA /* ImitationLaunchScreen.storyboard */; };
+		F4DFB3A5249E139B00E40B48 /* NeonTubes2.otf in Resources */ = {isa = PBXBuildFile; fileRef = F4DFB3A4249E139B00E40B48 /* NeonTubes2.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		531AF2FA4199501541C1FACF /* libPods-tUP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tUP.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		83C798CF9834566673EC5287 /* Pods-tUP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tUP.release.xcconfig"; path = "Target Support Files/Pods-tUP/Pods-tUP.release.xcconfig"; sourceTree = "<group>"; };
-		F4C5EE272413FA62006EF511 /* App name.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "App name.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F903D90257E526A6FCC34F7 /* Pods_tUP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tUP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73BC08EA55625AC2263E4E02 /* Pods-tUP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tUP.release.xcconfig"; path = "Target Support Files/Pods-tUP/Pods-tUP.release.xcconfig"; sourceTree = "<group>"; };
+		833ED8627106000483168F6D /* Pods-tUP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tUP.debug.xcconfig"; path = "Target Support Files/Pods-tUP/Pods-tUP.debug.xcconfig"; sourceTree = "<group>"; };
+		F4478BC9249D56C0008271D1 /* SimpleModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleModels.swift; sourceTree = "<group>"; };
+		F4478BCB249D571F008271D1 /* DataBaseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseModels.swift; sourceTree = "<group>"; };
+		F4478BCE249D5806008271D1 /* LaunchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchManager.swift; sourceTree = "<group>"; };
+		F4478BD1249D6A6E008271D1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		F465A87A24C755760031A3FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F465A87E24C75E330031A3FE /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
+		F465A88124C78E580031A3FE /* AuntificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuntificationManager.swift; sourceTree = "<group>"; };
+		F465A88424C793E50031A3FE /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		F465A88724C795BC0031A3FE /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
+		F48F28CF24EDA46C00D518FC /* AlertsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsManager.swift; sourceTree = "<group>"; };
+		F48F28D224EDA5AD00D518FC /* ConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityManager.swift; sourceTree = "<group>"; };
+		F4C5EE272413FA62006EF511 /* PicORY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicORY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C5EE2A2413FA62006EF511 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4C5EE332413FA64006EF511 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4C5EE362413FA64006EF511 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,20 +80,16 @@
 		F4D7ECE524140D9F0086D1BE /* AuthorizationStoryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationStoryModels.swift; sourceTree = "<group>"; };
 		F4D7ECE624140D9F0086D1BE /* AuthorizationStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationStoryViewController.swift; sourceTree = "<group>"; };
 		F4D7ECE724140D9F0086D1BE /* AuthorizationStoryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationStoryInteractor.swift; sourceTree = "<group>"; };
-		F4D7ECF1241413380086D1BE /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = tUP/R.generated.swift; sourceTree = SOURCE_ROOT; };
 		F4D7ECFF2414238E0086D1BE /* AuthorizationStory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthorizationStory.storyboard; sourceTree = "<group>"; };
 		F4D7ED04241439B70086D1BE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		F4D7ED0724143D8F0086D1BE /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
-		F4D7ED0924143F520086D1BE /* SourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceModel.swift; sourceTree = "<group>"; };
 		F4DAE2B924144334000763DA /* ImitationLaunchScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImitationLaunchScreenInteractor.swift; sourceTree = "<group>"; };
 		F4DAE2BB24144347000763DA /* ImitationLaunchScreenWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImitationLaunchScreenWorker.swift; sourceTree = "<group>"; };
 		F4DAE2BC24144347000763DA /* ImitationLaunchScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImitationLaunchScreenViewController.swift; sourceTree = "<group>"; };
 		F4DAE2BD24144347000763DA /* ImitationLaunchScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImitationLaunchScreenRouter.swift; sourceTree = "<group>"; };
 		F4DAE2BE24144347000763DA /* ImitationLaunchScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImitationLaunchScreenPresenter.swift; sourceTree = "<group>"; };
 		F4DAE2BF24144347000763DA /* ImitationLaunchScreenModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImitationLaunchScreenModels.swift; sourceTree = "<group>"; };
-		F4DAE2C524144576000763DA /* PhotosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosModel.swift; sourceTree = "<group>"; };
 		F4DAE2C72414518A000763DA /* ImitationLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ImitationLaunchScreen.storyboard; sourceTree = "<group>"; };
-		F802069F93C09BE97395E447 /* Pods-tUP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tUP.debug.xcconfig"; path = "Target Support Files/Pods-tUP/Pods-tUP.debug.xcconfig"; sourceTree = "<group>"; };
+		F4DFB3A4249E139B00E40B48 /* NeonTubes2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NeonTubes2.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,28 +97,107 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22062D73890DFDCFED2D36B2 /* libPods-tUP.a in Frameworks */,
+				730EAC06A888A78EDEE39716 /* Pods_tUP.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15D02BF4546DF9E9B911E80F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F903D90257E526A6FCC34F7 /* Pods_tUP.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C4EFA2823F78D1E6C66C3448 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F802069F93C09BE97395E447 /* Pods-tUP.debug.xcconfig */,
-				83C798CF9834566673EC5287 /* Pods-tUP.release.xcconfig */,
+				833ED8627106000483168F6D /* Pods-tUP.debug.xcconfig */,
+				73BC08EA55625AC2263E4E02 /* Pods-tUP.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		EC0CF174CC148372B47EE550 /* Frameworks */ = {
+		F4478BC7249D5651008271D1 /* Manager's */ = {
 			isa = PBXGroup;
 			children = (
-				531AF2FA4199501541C1FACF /* libPods-tUP.a */,
+				F48F28D124EDA5A000D518FC /* Connectivity */,
+				F48F28CE24EDA43A00D518FC /* Alerts */,
+				F465A88324C793D50031A3FE /* User */,
+				F465A88024C78DE60031A3FE /* Auntification */,
+				F465A87C24C75DF40031A3FE /* Database */,
+				F4478BCD249D57AD008271D1 /* ApplicationState */,
+				F4D7ED03241439590086D1BE /* Network */,
 			);
-			name = Frameworks;
+			path = "Manager's";
+			sourceTree = "<group>";
+		};
+		F4478BCD249D57AD008271D1 /* ApplicationState */ = {
+			isa = PBXGroup;
+			children = (
+				F4478BCE249D5806008271D1 /* LaunchManager.swift */,
+			);
+			path = ApplicationState;
+			sourceTree = "<group>";
+		};
+		F465A87C24C75DF40031A3FE /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				F465A88624C795940031A3FE /* DataStore */,
+				F465A87D24C75E1B0031A3FE /* Firestore */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		F465A87D24C75E1B0031A3FE /* Firestore */ = {
+			isa = PBXGroup;
+			children = (
+				F465A87E24C75E330031A3FE /* FirestoreManager.swift */,
+			);
+			path = Firestore;
+			sourceTree = "<group>";
+		};
+		F465A88024C78DE60031A3FE /* Auntification */ = {
+			isa = PBXGroup;
+			children = (
+				F465A88124C78E580031A3FE /* AuntificationManager.swift */,
+			);
+			path = Auntification;
+			sourceTree = "<group>";
+		};
+		F465A88324C793D50031A3FE /* User */ = {
+			isa = PBXGroup;
+			children = (
+				F465A88424C793E50031A3FE /* UserManager.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		F465A88624C795940031A3FE /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				F465A88724C795BC0031A3FE /* DataBaseManager.swift */,
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
+		F48F28CE24EDA43A00D518FC /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				F48F28CF24EDA46C00D518FC /* AlertsManager.swift */,
+			);
+			path = Alerts;
+			sourceTree = "<group>";
+		};
+		F48F28D124EDA5A000D518FC /* Connectivity */ = {
+			isa = PBXGroup;
+			children = (
+				F48F28D224EDA5AD00D518FC /* ConnectivityManager.swift */,
+			);
+			path = Connectivity;
 			sourceTree = "<group>";
 		};
 		F4C5EE1E2413FA62006EF511 = {
@@ -111,14 +206,14 @@
 				F4C5EE292413FA62006EF511 /* tUP */,
 				F4C5EE282413FA62006EF511 /* Products */,
 				C4EFA2823F78D1E6C66C3448 /* Pods */,
-				EC0CF174CC148372B47EE550 /* Frameworks */,
+				15D02BF4546DF9E9B911E80F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		F4C5EE282413FA62006EF511 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F4C5EE272413FA62006EF511 /* App name.app */,
+				F4C5EE272413FA62006EF511 /* PicORY.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,9 +223,11 @@
 			children = (
 				F4D7ECB52414005B0086D1BE /* ApplicationLayer */,
 				F4C5EE2A2413FA62006EF511 /* AppDelegate.swift */,
-				F4D7ECF1241413380086D1BE /* R.generated.swift */,
 				F4C5EE352413FA64006EF511 /* LaunchScreen.storyboard */,
+				F465A87A24C755760031A3FE /* GoogleService-Info.plist */,
+				F4478BD1249D6A6E008271D1 /* R.generated.swift */,
 				F4C5EE382413FA64006EF511 /* Info.plist */,
+				F4DFB3A3249E136400E40B48 /* Font's */,
 				F4D7ECB4241400110086D1BE /* Xcassets */,
 			);
 			path = tUP;
@@ -182,10 +279,10 @@
 			children = (
 				F4DAE2BC24144347000763DA /* ImitationLaunchScreenViewController.swift */,
 				F4DAE2B924144334000763DA /* ImitationLaunchScreenInteractor.swift */,
-				F4DAE2BF24144347000763DA /* ImitationLaunchScreenModels.swift */,
 				F4DAE2BE24144347000763DA /* ImitationLaunchScreenPresenter.swift */,
 				F4DAE2BD24144347000763DA /* ImitationLaunchScreenRouter.swift */,
 				F4DAE2BB24144347000763DA /* ImitationLaunchScreenWorker.swift */,
+				F4DAE2BF24144347000763DA /* ImitationLaunchScreenModels.swift */,
 				F4DAE2C72414518A000763DA /* ImitationLaunchScreen.storyboard */,
 			);
 			path = ImitationLaunchScreen;
@@ -208,7 +305,9 @@
 		F4D7ED01241439000086D1BE /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				F4D7ED03241439590086D1BE /* Network */,
+				F4DFB3AA249E23A000E40B48 /* CustomeUI */,
+				F4DFB3A6249E1A5200E40B48 /* Extension's */,
+				F4478BC7249D5651008271D1 /* Manager's */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -216,8 +315,8 @@
 		F4D7ED02241439100086D1BE /* Scene's */ = {
 			isa = PBXGroup;
 			children = (
-				F4D7ECC5241404950086D1BE /* Home */,
 				F4D7ECC2241401F80086D1BE /* CustomLaunchScreen */,
+				F4D7ECC5241404950086D1BE /* Home */,
 			);
 			path = "Scene's";
 			sourceTree = "<group>";
@@ -233,11 +332,32 @@
 		F4D7ED0624143D4C0086D1BE /* Model's */ = {
 			isa = PBXGroup;
 			children = (
-				F4D7ED0724143D8F0086D1BE /* PhotoModel.swift */,
-				F4D7ED0924143F520086D1BE /* SourceModel.swift */,
-				F4DAE2C524144576000763DA /* PhotosModel.swift */,
+				F4478BC9249D56C0008271D1 /* SimpleModels.swift */,
+				F4478BCB249D571F008271D1 /* DataBaseModels.swift */,
 			);
 			path = "Model's";
+			sourceTree = "<group>";
+		};
+		F4DFB3A3249E136400E40B48 /* Font's */ = {
+			isa = PBXGroup;
+			children = (
+				F4DFB3A4249E139B00E40B48 /* NeonTubes2.otf */,
+			);
+			path = "Font's";
+			sourceTree = "<group>";
+		};
+		F4DFB3A6249E1A5200E40B48 /* Extension's */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Extension's";
+			sourceTree = "<group>";
+		};
+		F4DFB3AA249E23A000E40B48 /* CustomeUI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomeUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,11 +367,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4C5EE3B2413FA64006EF511 /* Build configuration list for PBXNativeTarget "tUP" */;
 			buildPhases = (
-				7D45CFF5B7A6511C93C52B0A /* [CP] Check Pods Manifest.lock */,
+				299EE2FB56734FFAF69A1869 /* [CP] Check Pods Manifest.lock */,
 				F4D7ECEE24140EE90086D1BE /* R.swift */,
 				F4C5EE232413FA62006EF511 /* Sources */,
 				F4C5EE242413FA62006EF511 /* Frameworks */,
 				F4C5EE252413FA62006EF511 /* Resources */,
+				61FA630F46C914639AF3F6FB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -259,7 +380,7 @@
 			);
 			name = tUP;
 			productName = tUP;
-			productReference = F4C5EE272413FA62006EF511 /* App name.app */;
+			productReference = F4C5EE272413FA62006EF511 /* PicORY.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -301,7 +422,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4C5EE372413FA64006EF511 /* LaunchScreen.storyboard in Resources */,
+				F4DFB3A5249E139B00E40B48 /* NeonTubes2.otf in Resources */,
 				F4C5EE342413FA64006EF511 /* Assets.xcassets in Resources */,
+				F465A87B24C755760031A3FE /* GoogleService-Info.plist in Resources */,
 				F4D7ECD3241405360086D1BE /* Home.storyboard in Resources */,
 				F4DAE2C82414518B000763DA /* ImitationLaunchScreen.storyboard in Resources */,
 				F4D7ED002414238E0086D1BE /* AuthorizationStory.storyboard in Resources */,
@@ -311,7 +434,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7D45CFF5B7A6511C93C52B0A /* [CP] Check Pods Manifest.lock */ = {
+		299EE2FB56734FFAF69A1869 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -331,6 +454,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61FA630F46C914639AF3F6FB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tUP/Pods-tUP-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tUP/Pods-tUP-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tUP/Pods-tUP-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F4D7ECEE24140EE90086D1BE /* R.swift */ = {
@@ -362,24 +502,30 @@
 			files = (
 				F4D7ECEB24140D9F0086D1BE /* AuthorizationStoryModels.swift in Sources */,
 				F4D7ED05241439B70086D1BE /* NetworkManager.swift in Sources */,
-				F4DAE2C624144576000763DA /* PhotosModel.swift in Sources */,
+				F4478BCA249D56C0008271D1 /* SimpleModels.swift in Sources */,
 				F4DAE2C324144347000763DA /* ImitationLaunchScreenPresenter.swift in Sources */,
+				F465A88824C795BC0031A3FE /* DataBaseManager.swift in Sources */,
 				F4D7ECED24140D9F0086D1BE /* AuthorizationStoryInteractor.swift in Sources */,
+				F4478BCC249D571F008271D1 /* DataBaseModels.swift in Sources */,
 				F4D7ECCD241404C50086D1BE /* HomeWorker.swift in Sources */,
 				F4C5EE2B2413FA62006EF511 /* AppDelegate.swift in Sources */,
 				F4D7ECE824140D9F0086D1BE /* AuthorizationStoryPresenter.swift in Sources */,
+				F4478BCF249D5806008271D1 /* LaunchManager.swift in Sources */,
+				F465A88224C78E580031A3FE /* AuntificationManager.swift in Sources */,
 				F4DAE2C424144347000763DA /* ImitationLaunchScreenModels.swift in Sources */,
+				F4478BD2249D6A6E008271D1 /* R.generated.swift in Sources */,
 				F4DAE2C024144347000763DA /* ImitationLaunchScreenWorker.swift in Sources */,
-				F4D7ECF2241413380086D1BE /* R.generated.swift in Sources */,
 				F4D7ECD1241404C50086D1BE /* HomeInteractor.swift in Sources */,
-				F4D7ED0A24143F520086D1BE /* SourceModel.swift in Sources */,
 				F4D7ECCC241404C50086D1BE /* HomePresenter.swift in Sources */,
 				F4D7ECCE241404C50086D1BE /* HomeRouter.swift in Sources */,
+				F48F28D324EDA5AD00D518FC /* ConnectivityManager.swift in Sources */,
+				F465A87F24C75E330031A3FE /* FirestoreManager.swift in Sources */,
+				F465A88524C793E50031A3FE /* UserManager.swift in Sources */,
 				F4DAE2C124144347000763DA /* ImitationLaunchScreenViewController.swift in Sources */,
 				F4D7ECCF241404C50086D1BE /* HomeModels.swift in Sources */,
 				F4D7ECEA24140D9F0086D1BE /* AuthorizationStoryRouter.swift in Sources */,
-				F4D7ED0824143D8F0086D1BE /* PhotoModel.swift in Sources */,
 				F4D7ECEC24140D9F0086D1BE /* AuthorizationStoryViewController.swift in Sources */,
+				F48F28D024EDA46C00D518FC /* AlertsManager.swift in Sources */,
 				F4D7ECD0241404C50086D1BE /* HomeViewController.swift in Sources */,
 				F4DAE2BA24144334000763DA /* ImitationLaunchScreenInteractor.swift in Sources */,
 				F4DAE2C224144347000763DA /* ImitationLaunchScreenRouter.swift in Sources */,
@@ -451,7 +597,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -505,7 +651,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -517,7 +663,7 @@
 		};
 		F4C5EE3C2413FA64006EF511 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F802069F93C09BE97395E447 /* Pods-tUP.debug.xcconfig */;
+			baseConfigurationReference = 833ED8627106000483168F6D /* Pods-tUP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -529,8 +675,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = tUPTeam.tUP;
-				PRODUCT_NAME = "App name";
+				PRODUCT_BUNDLE_IDENTIFIER = New.PicORY.App;
+				PRODUCT_NAME = PicORY;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -539,7 +685,7 @@
 		};
 		F4C5EE3D2413FA64006EF511 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 83C798CF9834566673EC5287 /* Pods-tUP.release.xcconfig */;
+			baseConfigurationReference = 73BC08EA55625AC2263E4E02 /* Pods-tUP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -551,8 +697,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = tUPTeam.tUP;
-				PRODUCT_NAME = "App name";
+				PRODUCT_BUNDLE_IDENTIFIER = New.PicORY.App;
+				PRODUCT_NAME = PicORY;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

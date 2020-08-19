@@ -12,20 +12,46 @@
 
 import UIKit
 
-protocol ImitationLaunchScreenPresentationLogic
-{
-  func presentSomething(response: ImitationLaunchScreen.Something.Response)
+protocol ImitationLaunchScreenPresentationLogic {
+    func presentRandomPhotoInfo(response: ImitationLaunchScreen.PhotoInfo.Response)
+    func presentPhoto(response: ImitationLaunchScreen.PhotoPreview.Response)
+    
+    func presentPhotoToSet(response: ImitationLaunchScreen.PhotoToSet.Response)
 }
 
-class ImitationLaunchScreenPresenter: ImitationLaunchScreenPresentationLogic
-{
-  weak var viewController: ImitationLaunchScreenDisplayLogic?
+class ImitationLaunchScreenPresenter: ImitationLaunchScreenPresentationLogic {
+ 
+    weak var viewController: ImitationLaunchScreenDisplayLogic?
   
-  // MARK: Do something
-  
-  func presentSomething(response: ImitationLaunchScreen.Something.Response)
-  {
-    let viewModel = ImitationLaunchScreen.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+    func presentRandomPhotoInfo(response: ImitationLaunchScreen.PhotoInfo.Response) {
+          
+        if let photo = response.photo, let url = URL(string: photo.source.portrait) {
+            let viewModel = ImitationLaunchScreen.PhotoInfo.ViewModel(photoUrl: url, error: nil)
+            viewController?.displayPhotoInfo(viewModel: viewModel)
+        }
+
+        if let error = response.error {
+            let viewModel = ImitationLaunchScreen.PhotoInfo.ViewModel(photoUrl: nil, error: error)
+            viewController?.displayErrorInfo(viewModel: viewModel)
+        }
+    }
+    
+    func presentPhoto(response: ImitationLaunchScreen.PhotoPreview.Response) {
+        
+        if let photo = response.photo {
+            let viewModel = ImitationLaunchScreen.PhotoPreview.ViewModel(photo: photo, error: nil)
+            viewController?.displayPhoto(viewModel: viewModel)
+        }
+        
+        if let error = response.error {
+            let viewModel = ImitationLaunchScreen.PhotoPreview.ViewModel(photo: nil, error: error)
+            viewController?.displayPhotoError(viewModel: viewModel)
+        }
+    }
+    
+    func presentPhotoToSet(response: ImitationLaunchScreen.PhotoToSet.Response) {
+        
+        let viewModel = ImitationLaunchScreen.PhotoToSet.ViewModel()
+        viewController?.displayPhotoToSet(viewModel: viewModel)
+    }
 }

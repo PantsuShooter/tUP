@@ -12,22 +12,15 @@
 
 import UIKit
 
-enum AuthorizationStory
-{
-  // MARK: Use cases
-  
-    enum Photo {
-        struct Request {}
-        struct Response {
-            
-            let photo: PhotoModel?
-            let error: Error?
-        }
-        
-        struct ViewModel {
-            
-            let photoUrl: URL?
-            let error: Error?
-        }
-    }
+enum AuthorizationStory {
+    
+  enum Photo {
+      struct Request {}
+      struct Response {
+          let photo: UIImage
+      }
+      struct ViewModel {
+          let photo: UIImage
+      }
+  }
 }

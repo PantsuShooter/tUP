@@ -11,6 +11,7 @@
 //
 
 import UIKit
+import Hero
 
 protocol HomeDisplayLogic: class
 {
@@ -23,7 +24,6 @@ class HomeViewController: UIViewController, HomeDisplayLogic
   var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
 
   // MARK: Object lifecycle
-  
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
   {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -37,7 +37,6 @@ class HomeViewController: UIViewController, HomeDisplayLogic
   }
   
   // MARK: Setup
-  
   private func setup()
   {
     let viewController = self
@@ -53,7 +52,6 @@ class HomeViewController: UIViewController, HomeDisplayLogic
   }
   
   // MARK: Routing
-  
   override func prepare(for segue: UIStoryboardSegue, sender: Any?)
   {
     if let scene = segue.identifier {
@@ -65,7 +63,6 @@ class HomeViewController: UIViewController, HomeDisplayLogic
   }
   
   // MARK: View lifecycle
-  
   override func viewDidLoad()
   {
     super.viewDidLoad()
@@ -95,6 +92,8 @@ private extension HomeViewController {
         
        navigationController?.setNavigationBarHidden(true, animated: false)
         
+        self.hero.modalAnimationType = .selectBy(presenting:.zoom, dismissing:.zoomOut)
+
     }
 }
 

@@ -1,4 +1,4 @@
-module Pods_tUP {
+framework module Pods_tUP {
   umbrella header "Pods-tUP-umbrella.h"
 
   export *

@@ -12,20 +12,39 @@
 
 import UIKit
 
-enum ImitationLaunchScreen
-{
-  // MARK: Use cases
-  
-  enum Something
-  {
-    struct Request
-    {
+enum ImitationLaunchScreen {
+      
+    enum PhotoInfo {
+        struct Request {}
+        struct Response {
+            let photo: PhotoModel?
+            let error: Error?
+        }
+        struct ViewModel {
+            let photoUrl: URL?
+            let error: Error?
+        }
     }
-    struct Response
-    {
+    
+    enum PhotoPreview {
+        struct Request {
+            let imageLink: URL
+        }
+        struct Response {
+            let photo: UIImage?
+            let error: Error?
+        }
+        struct ViewModel {
+            let photo: UIImage?
+            let error: Error?
+        }
     }
-    struct ViewModel
-    {
+    
+    enum PhotoToSet {
+        struct Request {
+            let photo: UIImage
+        }
+        struct Response {}
+        struct ViewModel {}
     }
-  }
 }

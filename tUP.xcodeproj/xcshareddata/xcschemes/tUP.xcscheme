@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F4C5EE262413FA62006EF511"
-               BuildableName = "App name.app"
+               BuildableName = "PicORY.app"
                BlueprintName = "tUP"
                ReferencedContainer = "container:tUP.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F4C5EE262413FA62006EF511"
-            BuildableName = "App name.app"
+            BuildableName = "PicORY.app"
             BlueprintName = "tUP"
             ReferencedContainer = "container:tUP.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F4C5EE262413FA62006EF511"
-            BuildableName = "App name.app"
+            BuildableName = "PicORY.app"
             BlueprintName = "tUP"
             ReferencedContainer = "container:tUP.xcodeproj">
          </BuildableReference>

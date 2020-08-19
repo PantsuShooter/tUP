@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AXm-iS-8fK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AXm-iS-8fK">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,28 +30,51 @@
         <!--Imitation Launch Screen View Controller-->
         <scene sceneID="Uai-H2-0Uj">
             <objects>
-                <viewController id="Nqv-ud-3D7" customClass="ImitationLaunchScreenViewController" customModule="tUP" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9iB-fa-eL8">
+                <viewController id="Nqv-ud-3D7" customClass="ImitationLaunchScreenViewController" customModule="PicORY" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9iB-fa-eL8" customClass="AnimatedGradientView" customModule="AnimatedGradientView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m40-LK-SId">
-                                <rect key="frame" x="82" y="144" width="250" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gkl-8X-Zmf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="sIh-Zw-J0x">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="regular"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="CustomLaunchScreenBGEffectViewID"/>
+                                </userDefinedRuntimeAttributes>
+                            </visualEffectView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m40-LK-SId" customClass="NeonLabel" customModule="PicORY" customModuleProvider="target">
+                                <rect key="frame" x="92" y="144" width="230" height="58.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="CustomLaunchScreenLabelID"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="addNeonEffect" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="blurSize">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="37T-n2-BY6" firstAttribute="trailing" secondItem="m40-LK-SId" secondAttribute="trailing" constant="82" id="RAm-Zl-Cp7"/>
+                            <constraint firstItem="Gkl-8X-Zmf" firstAttribute="trailing" secondItem="37T-n2-BY6" secondAttribute="trailing" id="5Ix-pY-Kr8"/>
+                            <constraint firstAttribute="bottom" secondItem="Gkl-8X-Zmf" secondAttribute="bottom" id="L6x-YZ-yLQ"/>
+                            <constraint firstItem="Gkl-8X-Zmf" firstAttribute="top" secondItem="9iB-fa-eL8" secondAttribute="top" id="Ote-Du-YYa"/>
+                            <constraint firstItem="m40-LK-SId" firstAttribute="centerX" secondItem="9iB-fa-eL8" secondAttribute="centerX" id="QDG-aF-RcS"/>
+                            <constraint firstItem="Gkl-8X-Zmf" firstAttribute="leading" secondItem="37T-n2-BY6" secondAttribute="leading" id="eI0-J4-LzX"/>
                             <constraint firstItem="m40-LK-SId" firstAttribute="top" secondItem="9iB-fa-eL8" secondAttribute="top" constant="144" id="hEH-0N-m2u"/>
-                            <constraint firstItem="m40-LK-SId" firstAttribute="leading" secondItem="37T-n2-BY6" secondAttribute="leading" constant="82" id="wYf-KU-YsS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="37T-n2-BY6"/>
                         <userDefinedRuntimeAttributes>
@@ -66,7 +89,9 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
+                        <outlet property="backgroundView" destination="9iB-fa-eL8" id="JfR-AU-IEH"/>
                         <segue destination="hjG-ly-yR2" kind="show" identifier="AuthorizationStory" id="GCT-5g-ME3"/>
+                        <segue destination="Wh9-va-8Je" kind="show" identifier="Home" id="ffs-em-Lhq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5NR-uI-hXb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -81,7 +106,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6xC-0Y-e4P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="715" y="-78"/>
+            <point key="canvasLocation" x="709" y="-112"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="Iya-Id-iSA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="Wh9-va-8Je" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Dhe-tV-LRA"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Nf-x8-ngO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="709" y="-42"/>
         </scene>
     </scenes>
 </document>

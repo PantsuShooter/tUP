@@ -14,8 +14,8 @@ import UIKit
 
 class AuthorizationStoryWorker {
   
-    public func getRandomPhoto(completionBlock: @escaping ( _ photo: PhotoModel?,  _ error: Error?) -> ()) {
-        
-        NetworkManager.shared.getRandomPhoto(completionBlock: completionBlock)
-    }
+//    public func getRandomPhoto(completionBlock: @escaping ( _ photo: PhotoModel?,  _ error: Error?) -> ()) {
+//        
+//        NetworkManager.shared.getRandomPhoto(completionBlock: completionBlock)
+//    }
 }

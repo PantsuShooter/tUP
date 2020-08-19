@@ -12,30 +12,46 @@
 
 import UIKit
 
-protocol ImitationLaunchScreenBusinessLogic
-{
-  func doSomething(request: ImitationLaunchScreen.Something.Request)
-}
-
-protocol ImitationLaunchScreenDataStore
-{
-  //var name: String { get set }
-}
-
-class ImitationLaunchScreenInteractor: ImitationLaunchScreenBusinessLogic, ImitationLaunchScreenDataStore
-{
-  var presenter: ImitationLaunchScreenPresentationLogic?
-  var worker: ImitationLaunchScreenWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: ImitationLaunchScreen.Something.Request)
-  {
-    worker = ImitationLaunchScreenWorker()
-    worker?.doSomeWork()
+protocol ImitationLaunchScreenBusinessLogic {
+    func getRandomPhoto(request: ImitationLaunchScreen.PhotoInfo.Request)
+    func loadPhoto(request: ImitationLaunchScreen.PhotoPreview.Request)
     
-    let response = ImitationLaunchScreen.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+    func setPhoto(reques: ImitationLaunchScreen.PhotoToSet.Request)
+}
+
+protocol ImitationLaunchScreenDataStore {
+    var image: UIImage? { get set }
+}
+
+class ImitationLaunchScreenInteractor: ImitationLaunchScreenBusinessLogic, ImitationLaunchScreenDataStore {
+      
+    var image: UIImage?
+    
+    var presenter: ImitationLaunchScreenPresentationLogic?
+    var worker = ImitationLaunchScreenWorker()
+    
+
+    func getRandomPhoto(request: ImitationLaunchScreen.PhotoInfo.Request) {
+    
+        worker.getRandomPhoto(completionBlock: { [weak self] photo, error in
+            let response = ImitationLaunchScreen.PhotoInfo.Response(photo: photo, error: error)
+            self?.presenter?.presentRandomPhotoInfo(response: response)
+        })
+    }
+    
+    func loadPhoto(request: ImitationLaunchScreen.PhotoPreview.Request) {
+        
+        worker.getPhotoBy(url: request.imageLink) { [weak self] image, error in
+            let response = ImitationLaunchScreen.PhotoPreview.Response(photo: image, error: error)
+            self?.presenter?.presentPhoto(response: response)
+        }
+    }
+    
+    func setPhoto(reques: ImitationLaunchScreen.PhotoToSet.Request) {
+        
+        image = reques.photo
+        
+        let response = ImitationLaunchScreen.PhotoToSet.Response()
+        presenter?.presentPhotoToSet(response: response)
+    }
 }

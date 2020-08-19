@@ -11,11 +11,10 @@
 //
 
 import UIKit
-import Nuke
+import Firebase
 
 protocol AuthorizationStoryDisplayLogic: class {
-    func displayPhoto(viewModel: AuthorizationStory.Photo.ViewModel)
-    func displayError(viewModel: AuthorizationStory.Photo.ViewModel)
+    func displayLoadedContent(request: AuthorizationStory.Photo.ViewModel)
 }
 
 class AuthorizationStoryViewController: UIViewController, AuthorizationStoryDisplayLogic {
@@ -23,6 +22,8 @@ class AuthorizationStoryViewController: UIViewController, AuthorizationStoryDisp
     var interactor: AuthorizationStoryBusinessLogic?
     var router: (NSObjectProtocol & AuthorizationStoryRoutingLogic & AuthorizationStoryDataPassing)?
   
+    @IBOutlet weak var navigationView: UIView!
+    @IBOutlet weak var navigationViewTrailingConstraint: NSLayoutConstraint!
     @IBOutlet weak var backGroundImageView: UIImageView!
     @IBOutlet weak var loginItemsStackView: UIStackView!
     @IBOutlet weak var appNameLabel: UILabel!
@@ -37,6 +38,15 @@ class AuthorizationStoryViewController: UIViewController, AuthorizationStoryDisp
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setup()
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
   
     // MARK: Setup
@@ -66,49 +76,32 @@ class AuthorizationStoryViewController: UIViewController, AuthorizationStoryDisp
     // MARK: View lifecycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        let request = AuthorizationStory.Photo.Request()
-        interactor?.getRandomPhoto(request: request)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        UIView.animate(withDuration: 0.3) { [weak self] in
+        
+        navigationViewTrailingConstraint.constant = 15
+        
+        UIView.animate(withDuration: 0.5, animations: { [weak self] in
             self?.loginItemsStackView.alpha = 1
+        }) { _ in
+            UIView.animate(withDuration: 0.3) { [weak self] in
+                self?.backGroundImageView.alpha = 1
+            }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //LaunchManager.setUserAuthorizationStage(to: .yes)
+        
         setupUI()
     }
     
-    func displayPhoto(viewModel: AuthorizationStory.Photo.ViewModel) {
-      
-        guard let url = viewModel.photoUrl else { return }
-        
-
-        Nuke.loadImage(with: url, options: ImageLoadingOptions.shared, into: backGroundImageView, progress: nil) { response, error in
-            
-            UIView.animate(withDuration: 0.6) { [weak self] in
-                self?.backGroundImageView.alpha = 1
-            }
-            
-        }
-//
-////        let task = ImagePipeline.shared.loadImage(with: url, progress: {[weak self] response, _, _ in
-////            self?.backGroundImageView.image = response?.image
-////        }) { [weak self] response, error in
-////            self?.backGroundImageView.image = response?.image
-////        }
-        
-        //Nuke.loadImage(with: url, into: backGroundImageView)
-    }
-    
-    func displayError(viewModel: AuthorizationStory.Photo.ViewModel) {
-        
-        debugPrint(viewModel)
-        
+    func displayLoadedContent(request: AuthorizationStory.Photo.ViewModel) {
+        backGroundImageView.image = request.photo
     }
 }
 
@@ -116,10 +109,21 @@ private extension AuthorizationStoryViewController {
     
     func setupUI() {
         
+        let request = AuthorizationStory.Photo.Request()
+        interactor?.loadContent(request: request)
         addMoution()
         navigationController?.setNavigationBarHidden(true, animated: false)
         backGroundImageView.alpha = 0
         loginItemsStackView.alpha = 0
+        
+//        let gradientMaskLayer = CAGradientLayer()
+//        gradientMaskLayer.frame = navigationView.bounds
+//        gradientMaskLayer.colors = [UIColor.clear.cgColor, UIColor.white.cgColor, UIColor.white.cgColor, UIColor.clear.cgColor]
+//        gradientMaskLayer.locations = [0, 0.1, 0.9, 1]
+//        
+//        navigationView.layer.mask = gradientMaskLayer
+//        maskedView.layer.mask = gradientMaskLayer
+//        view.addSubview(maskedView)
         
     }
     
@@ -149,5 +153,19 @@ private extension AuthorizationStoryViewController {
         
         motionEffectGroup.motionEffects = [xMotion,yMotion]
         appNameLabel.addMotionEffect(motionEffectGroup)
+    }
+}
+
+//Action's
+private extension AuthorizationStoryViewController {
+    
+    @IBAction func tUPAction(_ sender: Any) {
+        
+
+        //var docRef =
+        //FirestoreManager.shared.addSomeData()
+        //FirestoreManager.shared.addSomeData()
+        AuntificationManager.createUserWith(email: "aaaa@aaa.aaa", password: "112233")//signInWith(email: "aaaa@aaa.aaa", password: "1234568")
+        
     }
 }

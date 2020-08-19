@@ -13,23 +13,16 @@
 import UIKit
 
 protocol AuthorizationStoryPresentationLogic {
-    func presentRandomPhoto(response: AuthorizationStory.Photo.Response)
+    func presentLoadedContent(response: AuthorizationStory.Photo.Response)
 }
 
 class AuthorizationStoryPresenter: AuthorizationStoryPresentationLogic {
-  
-  weak var viewController: AuthorizationStoryDisplayLogic?
-  
-    func presentRandomPhoto(response: AuthorizationStory.Photo.Response) {
-          
-        if let photo = response.photo, let url = URL(string: photo.source.portrait) {
-            let viewModel = AuthorizationStory.Photo.ViewModel(photoUrl: url, error: nil)
-            viewController?.displayPhoto(viewModel: viewModel)
-        }
 
-        if let error = response.error {
-            let viewModel = AuthorizationStory.Photo.ViewModel(photoUrl: nil, error: error)
-            viewController?.displayError(viewModel: viewModel)
-        }
+    weak var viewController: AuthorizationStoryDisplayLogic?
+  
+    func presentLoadedContent(response: AuthorizationStory.Photo.Response) {
+        
+        let viewModel = AuthorizationStory.Photo.ViewModel(photo: response.photo)
+        viewController?.displayLoadedContent(request: viewModel)
     }
 }
